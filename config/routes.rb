@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  
   devise_for :users
+
+  root to: "searches#index"
+
+  get '/searches', to: "searches#index"
+
+  get '/movie', to: "searches#movie"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
