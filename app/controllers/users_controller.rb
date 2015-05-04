@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
+
   def index
-    @users = User.all
+    
   end
 
   def show
-    id = params[:id]
-    @users = User.find(id)
+    if current_user
+    @user = User.find(current_user)
+      @content = current_user.contents
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def new
@@ -15,8 +20,10 @@ class UsersController < ApplicationController
   end
 
   def create
+
   end
 
   def delete
   end
+  
 end

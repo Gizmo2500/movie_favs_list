@@ -1,9 +1,14 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
-<%= link_to 'Search', searches_path %>
 
-<% @users.each do |x| %>
-	<ul>
-	<li><%= x.email %></li>
-	</ul>
+
+<%= @user.email %><br>
+<%= @user.username %><br>
+
+<% @content.each do |x| %>
+
+	<img src="<%= x.poster_url %>">
+	<h2><%= x.title %></h2>
+	<p><%= x.plot %></p>
+	
 <% end %>

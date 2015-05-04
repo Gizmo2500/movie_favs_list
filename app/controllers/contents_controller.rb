@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find(content_params)
   end
 
   def new
@@ -16,4 +17,10 @@ class ContentsController < ApplicationController
 
   def delete
   end
+
+   private
+
+    def content_params
+      params.require(:content).permit(:title, :poster_url, :plot)
+    end
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :contents
   end
 
-  root to: "searches#index"
+  root to: "users#show"
 
   get '/searches', to: "searches#index"
 
